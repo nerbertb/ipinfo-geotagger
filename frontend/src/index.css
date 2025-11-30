@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 
+
 @layer base {
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+}
+
+
+#map {
+  height: 400px;
+  width: 50%;
 }
