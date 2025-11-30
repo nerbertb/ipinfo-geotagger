@@ -1,10 +1,12 @@
 import express from 'express';
-import Routes from './routes/Routes.js';
+import router from './routes/router.js';
 
 const app = express();
- 
+
+app.use(express.json());
+app.use('/api', router);
 app.get('/', (req,res) => {
-    res.send("Hello!")
+    res.send("Backend is now running.")
 })
 
 

@@ -2,7 +2,7 @@ import {Router} from 'express';
 import { login } from '../controllers/controller.js';
 
 
-const router = new Router();
+const router = Router();
 
 router.post('/login', login);
 

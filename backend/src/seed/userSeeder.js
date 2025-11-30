@@ -1,6 +1,6 @@
 import mongoose, { mongo } from 'mongoose';
 import dotenv from 'dotenv';
-import { User } from '../models/User.js';
+import  User  from '../models/User.js';
 import bcrypt from 'bcryptjs';
 
 dotenv.config();
@@ -11,16 +11,16 @@ async function seedUsers() {
   try {
     await mongoose.connect(MONGO_URI);
 
-    const hashedPassword = await bcrypt.hash('password123', 10);
+    const encryptedPassword = await bcrypt.hash('password123', 10);
 
     await User.create([
       {
         email: 'intern@Jlabs.com',
-        password: hashedPassword,
+        password: encryptedPassword,
       },
       {
         email: 'jrfullstack@Jlabs.com',
-        password: hashedPassword,
+        password: encryptedPassword,
       },
     ]);
 
