@@ -14,8 +14,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 function Home() {
   const [geo, setGeo] = useState(null);
-//   const [initialGeo, setInitialGeo] = useState(null);
-//   const [inputIp, setInputIp] = useState('');
 
   const navigate = useNavigate();
 
@@ -31,7 +29,7 @@ function Home() {
       try {
         const res = await axios.get('https://ipinfo.io/geo');
         setGeo(res.data);
-        // setInitialGeo(res.data);
+
       } catch (err) {
         console.error('Error fetching geo data:', err);
       }
@@ -39,25 +37,6 @@ function Home() {
     fetchGeoData();
   }, []);
 
-
-
-//     function isValidIp(ip) {
-//     const regex =
-//       /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/;
-//     return regex.test(ip);
-//   }
-
-//   async function handleSearch() {
-//     if (!isValidIp(inputIp)) {
-//       alert("Invalid IP address");
-//       return;
-//     }
-//   }
-
-//       function handleClear() {
-//     setInputIp("");
-//     if (initialGeo) setGeo(initialGeo);
-//   }
 
   function logout() {
     localStorage.removeItem("token");
@@ -119,11 +98,6 @@ function Home() {
       </>
         )}
       
-      
-
-      <input type="text" />
-      <button></button>
-      <button></button>
     </div>
   );
 }
