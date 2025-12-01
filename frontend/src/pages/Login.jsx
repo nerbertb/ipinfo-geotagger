@@ -15,7 +15,7 @@ function Login() {
 
     try {
       //http://localhost:8000/api/login
-      const res = await axios.post('https://ipinfo-geotagger.onrender.com/', {
+      const res = await axios.post('https://ipinfo-geotagger.onrender.com/api/login', {
         email,
         password,
       });
