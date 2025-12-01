@@ -23,7 +23,7 @@ function Login() {
       localStorage.setItem('token', res.data.token);
 
       navigate('/home');
-      
+
     } catch (err) {
       console.error('Login error:', err);
       setError('Invalid Credentials');
@@ -31,22 +31,29 @@ function Login() {
   }
 
   return (
-    <div className="bg-gray-400">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="h-screen w-full flex flex-col justify-center items-center gap-10">
+       
+      <h2 className='poppins-extrabold text-5xl '>Welcome!</h2>
+       <div className='w-[50%] lg:w-[25%]'>
+      <form onSubmit={handleSubmit} className='flex flex-col'>
+        <p className='text-[12px] text-gray-500 mb-2'>Email</p>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="example@mail.com"
           onChange={(e) => setEmail(e.target.value)}
+          className='border-b-2 mb-4'
         />
+        <p className='text-[12px] text-gray-500 mb-2'>Password</p>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="******"
           onChange={(e) => setPassword(e.target.value)}
+          className='border-b-2 mb-10'
         />
-        <button type="submit">Login</button>
+        <button type="submit" className='bg-black text-white rounded-xl h-12'>Login</button>
       </form>
       {error && <p className="text-red-500">{error}</p>}
+      </div>
     </div>
   );
 }
